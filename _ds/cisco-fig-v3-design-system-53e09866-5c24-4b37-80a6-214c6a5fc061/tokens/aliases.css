@@ -1,0 +1,86 @@
+/* Cisco Fig v3 — Semantic aliases layered on the generated Figma variables (fig-tokens.css).
+   These give components stable, readable names. Brand core = Magnetic Blue #0A60FF. */
+:root {
+  /* ---- Brand ---- */
+  --fig-brand-blue: #0A60FF;            /* Magnetic blue — primary action */
+  --fig-brand-blue-hover: #124FC9;      /* blue-60 */
+  --fig-brand-blue-pressed: #0E3A99;    /* blue-70 */
+  --fig-brand-sky: #00BCEB;             /* Cisco sky blue */
+  --fig-brand-midnight: #07182D;        /* midnight text */
+
+  /* ---- Text ---- */
+  --fig-text-primary: #07182D;          /* near-black midnight */
+  --fig-text-secondary: #536070;        /* slate */
+  --fig-text-tertiary: #6C7A87;
+  --fig-text-disabled: #A1A9B2;
+  --fig-text-inverse: #FFFFFF;
+  --fig-text-link: #0A60FF;
+  --fig-text-danger: #B8121A;
+
+  /* ---- Surfaces ---- */
+  --fig-surface: #FFFFFF;
+  --fig-surface-tinted: #F2F5F7;
+  --fig-surface-hover: #EBEEF1;
+  --fig-surface-pressed: #E1E6EB;
+  --fig-canvas: #F2F5F7;
+
+  /* ---- Borders ---- */
+  --fig-border: #E1E6EB;
+  --fig-border-strong: #A1A9B2;
+  --fig-border-accent: #0A60FF;
+  --fig-border-focus: #0A60FF;
+
+  /* ---- Semantic fills ---- */
+  --fig-info: #0070D2;      --fig-info-weak: #E0EEFF;
+  --fig-success: #1B9E3E;   --fig-success-weak: #E4F6E9;
+  --fig-warning: #D67B00;   --fig-warning-weak: #FFF2DD;
+  --fig-danger: #D91821;    --fig-danger-weak: #FFE8EA;
+  --fig-danger-strong: #B8121A;
+
+  /* ---- Data-viz accent palette (Magnetic) ---- */
+  --fig-viz-blue: #0A60FF;
+  --fig-viz-teal: #00BCEB;
+  --fig-viz-purple: #8C5AE2;
+  --fig-viz-lavender: #B49BE8;
+  --fig-viz-pink: #E86DA4;
+  --fig-viz-magenta: #C6248A;
+  --fig-viz-lime: #7DB800;
+  --fig-viz-orange: #F26B1D;
+  --fig-viz-slate: #536070;
+
+  /* ---- Radius (px) ---- */
+  --fig-radius-xs: 4px;    /* tags, chips */
+  --fig-radius-sm: 8px;    /* inputs, small cards */
+  --fig-radius-md: 12px;   /* cards */
+  --fig-radius-lg: 16px;   /* large surfaces, medium button */
+  --fig-radius-xl: 20px;   /* large button */
+  --fig-radius-full: 999px;/* pills, avatars, badges */
+
+  /* ---- Spacing scale (4px base) ---- */
+  --fig-space-1: 4px;
+  --fig-space-2: 8px;
+  --fig-space-3: 12px;
+  --fig-space-4: 16px;
+  --fig-space-5: 20px;
+  --fig-space-6: 24px;
+  --fig-space-8: 32px;
+  --fig-space-10: 40px;
+  --fig-space-12: 48px;
+  --fig-space-16: 64px;
+
+  /* ---- Elevation ---- */
+  --fig-shadow-xs: 0 1px 2px rgba(0,0,0,0.08);
+  --fig-shadow-sm: 0 2px 6px rgba(0,0,0,0.08), 0 1px 2px rgba(0,0,0,0.06);
+  --fig-shadow-md: 0 4px 12px rgba(0,0,0,0.12), 0 2px 4px rgba(0,0,0,0.06);
+  --fig-shadow-lg: 0 12px 32px rgba(0,0,0,0.18), 0 4px 8px rgba(0,0,0,0.08);
+
+  /* ---- Motion ---- */
+  --fig-ease: cubic-bezier(0.4, 0, 0.2, 1); /* @kind other */
+  --fig-duration-fast: 120ms; /* @kind other */
+  --fig-duration: 200ms; /* @kind other */
+}
+a{color:var(--fig-text-link);text-decoration:none}
+a:hover{color:var(--fig-brand-blue-hover);text-decoration:underline}
+@keyframes fig-spin{to{transform:rotate(360deg)}}
+@keyframes fig-shimmer{0%{background-position:100% 50%}100%{background-position:0 50%}}
+@keyframes fig-ping{0%{transform:scale(1);opacity:.5}80%,100%{transform:scale(2.2);opacity:0}}

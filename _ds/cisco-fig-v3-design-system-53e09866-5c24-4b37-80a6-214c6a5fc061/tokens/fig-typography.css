@@ -1,0 +1,64 @@
+/* Cisco Fig v3 — Typography scale & font tokens.
+   Type scale transcribed from the Figma Typography specimen (13317:37766).
+   Family = Mulish substitute for proprietary CiscoSansTT (see fonts.css). */
+:root {
+  /* Font families */
+  --font-sans: 'CiscoSansTT', 'Mulish', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'B612 Mono', ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  /* Weights */
+  --font-weight-thin: 100;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Font sizes (px) */
+  --font-size-50: 12px;
+  --font-size-75: 14px;
+  --font-size-100: 16px;
+  --font-size-h6: 20px;
+  --font-size-h5: 24px;
+  --font-size-h4: 28px;
+  --font-size-h3: 32px;
+  --font-size-h2: 40px;
+  --font-size-h1: 48px;
+  --font-size-display-sm: 56px;
+  --font-size-display-md: 64px;
+  --font-size-display-lg: 80px;
+
+  /* Line heights (px) */
+  --line-height-50: 16px;
+  --line-height-75: 20px;
+  --line-height-100: 24px;
+  --line-height-h6: 24px;
+  --line-height-h5: 28px;
+  --line-height-h4: 32px;
+  --line-height-h3: 40px;
+  --line-height-h2: 48px;
+  --line-height-h1: 56px;
+  --line-height-display-sm: 64px;
+  --line-height-display-md: 72px;
+  --line-height-display-lg: 96px;
+
+  /* Letter spacing */
+  --letter-spacing-tight: -0.01em; /* display / headings */
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.2px;    /* counters, all-caps micro labels */
+}
+
+/* Reusable type classes — CiscoSansTT / Mulish */
+.fig-display-lg{font-family:var(--font-sans);font-weight:var(--font-weight-light);font-size:var(--font-size-display-lg);line-height:var(--line-height-display-lg);letter-spacing:var(--letter-spacing-tight)}
+.fig-display-md{font-family:var(--font-sans);font-weight:var(--font-weight-light);font-size:var(--font-size-display-md);line-height:var(--line-height-display-md);letter-spacing:var(--letter-spacing-tight)}
+.fig-display-sm{font-family:var(--font-sans);font-weight:var(--font-weight-light);font-size:var(--font-size-display-sm);line-height:var(--line-height-display-sm);letter-spacing:var(--letter-spacing-tight)}
+.fig-h1{font-family:var(--font-sans);font-weight:var(--font-weight-bold);font-size:var(--font-size-h1);line-height:var(--line-height-h1);letter-spacing:var(--letter-spacing-tight)}
+.fig-h2{font-family:var(--font-sans);font-weight:var(--font-weight-bold);font-size:var(--font-size-h2);line-height:var(--line-height-h2);letter-spacing:var(--letter-spacing-tight)}
+.fig-h3{font-family:var(--font-sans);font-weight:var(--font-weight-bold);font-size:var(--font-size-h3);line-height:var(--line-height-h3)}
+.fig-h4{font-family:var(--font-sans);font-weight:var(--font-weight-bold);font-size:var(--font-size-h4);line-height:var(--line-height-h4)}
+.fig-h5{font-family:var(--font-sans);font-weight:var(--font-weight-bold);font-size:var(--font-size-h5);line-height:var(--line-height-h5)}
+.fig-h6{font-family:var(--font-sans);font-weight:var(--font-weight-bold);font-size:var(--font-size-h6);line-height:var(--line-height-h6)}
+.fig-body-lg{font-family:var(--font-sans);font-weight:var(--font-weight-regular);font-size:var(--font-size-100);line-height:var(--line-height-100)}
+.fig-body{font-family:var(--font-sans);font-weight:var(--font-weight-regular);font-size:var(--font-size-75);line-height:var(--line-height-75)}
+.fig-body-sm{font-family:var(--font-sans);font-weight:var(--font-weight-regular);font-size:var(--font-size-50);line-height:var(--line-height-50)}
+.fig-label{font-family:var(--font-sans);font-weight:var(--font-weight-medium);font-size:var(--font-size-75);line-height:var(--line-height-75)}
+.fig-button{font-family:var(--font-sans);font-weight:var(--font-weight-medium);font-size:var(--font-size-100);line-height:var(--line-height-100)}

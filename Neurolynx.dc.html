@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<script src="./ds-base.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Neurolynx | Practical AI Education for Individuals and Organizations</title>
+<meta name="description" content="Explore clear AI insights, practical guidance, focused resources, and community-driven learning with Neurolynx." />
+<meta property="og:title" content="Neurolynx | Practical AI Education for Individuals and Organizations" />
+<meta property="og:description" content="Explore clear AI insights, practical guidance, focused resources, and community-driven learning with Neurolynx." />
+<meta property="og:type" content="website" />
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:'Mulish',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif;-webkit-font-smoothing:antialiased;background:#031126}
+::selection{background:#216BFF;color:#fff}
+@keyframes nx-hero-zoom{from{transform:scale(1.06)}to{transform:scale(1)}}
+@keyframes nx-modal-in{from{opacity:0;transform:translateY(12px) scale(0.98)}to{opacity:1;transform:none}}
+dialog#nx-modal::backdrop{background:rgba(3,17,38,0.64);backdrop-filter:blur(3px)}
+dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
+@media (prefers-reduced-motion: reduce){*{animation-duration:0.01ms !important;animation-iteration-count:1 !important;transition-duration:0.01ms !important;scroll-behavior:auto !important}}
+</style>
+</helmet>
+
+<a href="#main-content" style="{{ skipLinkStyle }}" style-focus="top:8px">Skip to main content</a>
+
+<header style="position:sticky;top:0;z-index:50;background:rgba(3,17,38,0.72);backdropFilter:blur(12px);borderBottom:1px solid rgba(75,143,255,0.18)">
+  <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:74px;display:flex;alignItems:center;justifyContent:space-between;gap:16px">
+    <a href="#top" aria-label="Neurolynx home" style="display:flex;alignItems:center;gap:12px;text-decoration:none">
+      <img src="./assets/nx-mark-light.png" alt="" width="30" height="31" style="display:block" />
+      <sc-if value="{{ showWordmark }}" hint-placeholder-val="{{ true }}">
+        <img src="./assets/nx-word-light.png" alt="" width="200" height="15" style="display:block" />
+      </sc-if>
+    </a>
+
+    <sc-if value="{{ showFullNav }}" hint-placeholder-val="{{ true }}">
+      <nav aria-label="Primary" style="display:flex;alignItems:center;gap:30px">
+        <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="4">
+          <a href="{{ link.href }}" style="{{ link.linkStyle }}" style-hover="color:#43D7FF" style-focus="outline:2px solid #43D7FF;outlineOffset:4px;borderRadius:2px">{{ link.label }}</a>
+        </sc-for>
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="medium" icon-left="SocialLinkedin" onClick="{{ openLinkedIn }}" aria-label="Connect with Neurolynx on LinkedIn (opens in a new tab)" hint-size="180px,32px">Connect on LinkedIn</x-import>
+      </nav>
+    </sc-if>
+
+    <sc-if value="{{ !showFullNav }}">
+      <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.IconButton" icon="{{ mobileMenuIcon }}" variant="minimal" size="medium" onClick="{{ toggleMobileMenu }}" aria-label="{{ menuButtonLabel }}" aria-expanded="{{ mobileMenuOpen }}" aria-controls="mobile-nav-panel" dc-props="{{ whiteControlExtra }}" hint-size="32px,32px"></x-import>
+    </sc-if>
+  </div>
+
+  <div id="nx-scroll-progress" aria-hidden="true" style="position:absolute;left:0;bottom:-1px;height:2px;width:0%;background:linear-gradient(90deg,#216BFF,#43D7FF)"></div>
+
+  <sc-if value="{{ mobileMenuOpen }}">
+    <nav id="mobile-nav-panel" aria-label="Mobile" style="borderTop:1px solid rgba(75,143,255,0.18);background:#071A34;padding:16px 24px 24px;display:flex;flexDirection:column;gap:4px">
+      <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="4">
+        <a href="{{ link.href }}" onClick="{{ closeMobileMenu }}" style="padding:14px 4px;fontSize:16px;fontWeight:600;color:#F7FAFF;borderBottom:1px solid rgba(75,143,255,0.14)" style-focus="outline:2px solid #43D7FF;outlineOffset:-2px">{{ link.label }}</a>
+      </sc-for>
+      <div style="margin-top:12px;display:flex;justifyContent:center">
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="large" icon-left="SocialLinkedin" onClick="{{ openLinkedIn }}" aria-label="Connect with Neurolynx on LinkedIn (opens in a new tab)" hint-size="220px,40px">Connect on LinkedIn</x-import>
+      </div>
+    </nav>
+  </sc-if>
+</header>
+
+<main id="main-content">
+
+  <section id="top" aria-labelledby="hero-heading" style="position:relative;overflow:hidden;background:#031126;minHeight:clamp(600px,86vh,880px);display:flex;alignItems:center">
+    <video id="nx-hero-video" src="./assets/hero-video.mp4" poster="./assets/hero-poster.jpg" muted="{{ true }}" loop="{{ true }}" playsInline="{{ true }}" autoPlay="{{ heroVideoAutoplay }}" aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;objectFit:cover;objectPosition:60% 40%;animation:nx-hero-zoom 1400ms cubic-bezier(0.22,1,0.36,1) both"></video>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(90deg,rgba(3,17,38,0.84) 0%,rgba(3,17,38,0.58) 44%,rgba(3,17,38,0.14) 100%)"></div>
+    <div aria-hidden="true" style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(3,17,38,0.28) 0%,rgba(3,17,38,0) 32%,rgba(3,17,38,0) 64%,rgba(3,17,38,0.96) 100%)"></div>
+
+    <div style="position:relative;z-index:2;width:100%;max-width:1200px;margin:0 auto;padding:96px 24px 120px">
+      <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:14px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#43D7FF;margin:0 0 22px" data-nx-reveal="true" data-nx-stagger-group="hero"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#43D7FF;boxShadow:0 0 10px rgba(67,215,255,0.8)"></span>AI education, made practical</p>
+
+      <h1 id="hero-heading" style="fontSize:clamp(38px,6.2vw,72px);fontWeight:300;lineHeight:1.06;letterSpacing:-0.015em;color:#F7FAFF;margin:0 0 26px;maxWidth:16ch" data-nx-reveal="true" data-nx-stagger-group="hero">
+        <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);whiteSpace:nowrap">Keep learning. Turn knowledge into confident action.</span>
+        <span aria-hidden="true">Keep learning.<br /><span style="whiteSpace:nowrap">Turn knowledge into </span><span style="position:relative;display:inline-block;whiteSpace:nowrap;lineHeight:1.18;paddingBottom:0.1em;verticalAlign:baseline"><span style="visibility:hidden;fontWeight:600">meaningful</span><sc-for list="{{ rotatingWords }}" as="w" hint-placeholder-count="3"><span style="{{ w.style }}">{{ w.text }}</span></sc-for></span> action.</span>
+      </h1>
+
+      <p style="fontSize:clamp(17px,2vw,20px);lineHeight:1.6;color:#DCE6F3;margin:0 0 38px;maxWidth:560px;textShadow:0 1px 12px rgba(3,17,38,0.5)" data-nx-reveal="true" data-nx-stagger-group="hero">Neurolynx helps individuals and organizations turn complex AI ideas into clear understanding, practical capability, and confident action.</p>
+
+      <div style="display:flex;flexWrap:wrap;alignItems:center;gap:26px" data-nx-reveal="true" data-nx-stagger-group="hero">
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="large" icon-right="ArrowRight" onClick="{{ scrollToOfferings }}" aria-label="Explore Neurolynx" hint-size="200px,40px">Explore Neurolynx</x-import>
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" dc-props="{{ whiteLinkExtra }}" aria-label="Connect with Neurolynx on LinkedIn (opens in a new tab)" hint-size="150px,20px">Connect on LinkedIn</x-import>
+      </div>
+    </div>
+
+    <div style="position:absolute;bottom:20px;right:20px;z-index:3;width:42px;height:42px;borderRadius:999px;background:rgba(3,17,38,0.6);border:1px solid rgba(75,143,255,0.3);display:flex;alignItems:center;justifyContent:center">
+      <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.IconButton" icon="{{ playPauseIcon }}" variant="minimal" size="medium" onClick="{{ togglePlayback }}" aria-label="{{ playPauseLabel }}" dc-props="{{ whiteControlExtra }}" hint-size="32px,32px"></x-import>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="about-heading" style="padding:clamp(64px,10vw,112px) 24px;background:#FFFFFF">
+    <div style="max-width:760px;margin:0 auto;text-align:center">
+      <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:14px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#216BFF;margin:0 0 16px" data-nx-reveal="true"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#216BFF"></span>Why Neurolynx</p>
+      <h2 id="about-heading" style="fontSize:clamp(30px,4vw,42px);fontWeight:700;letterSpacing:-0.01em;color:#031126;margin:0 0 24px" data-nx-reveal="true">AI is moving fast. Understanding it should not feel overwhelming.</h2>
+      <p style="fontSize:18px;lineHeight:1.7;color:#4A5A6E;margin:0" data-nx-reveal="true">Neurolynx turns complex ideas into clear, useful knowledge. We help individuals and organizations explore artificial intelligence, understand what matters, and build the confidence to apply it thoughtfully.</p>
+    </div>
+  </section>
+
+  <section id="offerings" aria-labelledby="offerings-heading" style="background:#EEF2F8;padding:clamp(64px,10vw,112px) 24px">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="max-width:640px;margin:0 0 40px">
+        <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:14px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#216BFF;margin:0 0 16px" data-nx-reveal="true"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#216BFF"></span>What you can explore</p>
+        <h2 id="offerings-heading" style="fontSize:clamp(30px,4vw,42px);fontWeight:700;letterSpacing:-0.01em;color:#031126;margin:0 0 16px" data-nx-reveal="true">Clarity for every stage of your AI journey.</h2>
+        <p style="fontSize:17px;lineHeight:1.6;color:#4A5A6E;margin:0" data-nx-reveal="true">Build understanding, turn insight into action, and keep learning as the field evolves.</p>
+      </div>
+      <div style="margin:0 0 48px" data-nx-reveal="true">
+        <button type="button" onClick="{{ openModal }}" aria-haspopup="dialog" style="display:inline-flex;alignItems:center;gap:9px;padding:11px 20px;background:#FFFFFF;border:1px solid rgba(33,107,255,0.35);borderRadius:999px;color:#216BFF;fontSize:15px;fontWeight:600;cursor:pointer;fontFamily:inherit;transition:border-color 160ms,box-shadow 160ms" style-hover="borderColor:#216BFF;boxShadow:0 0 0 4px rgba(33,107,255,0.1)" style-focus="outline:2px solid #216BFF;outlineOffset:2px"><span aria-hidden="true" style="width:8px;height:8px;borderRadius:999px;background:linear-gradient(90deg,#216BFF,#43D7FF)"></span>Quick Neurolynx overview</button>
+      </div>
+      <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
+        <sc-for list="{{ offerings }}" as="item" hint-placeholder-count="4">
+          <div style="background:#FFFFFF;border:1px solid #E1E6EB;borderRadius:14px;padding:32px 28px;transition:box-shadow 180ms cubic-bezier(0.4,0,0.2,1),transform 180ms cubic-bezier(0.4,0,0.2,1),border-color 180ms" style-hover="boxShadow:0 12px 30px rgba(3,17,38,0.1);transform:translateY(-3px);borderColor:rgba(33,107,255,0.4)" data-nx-reveal="true" data-nx-stagger-group="offerings">
+            <div style="width:54px;height:54px;borderRadius:14px;background:linear-gradient(135deg,#EAF1FF,#E4FAFF);display:flex;alignItems:center;justifyContent:center;color:#216BFF;margin:0 0 20px">
+              <svg width="26" height="26" viewBox="{{ item.viewBox }}" aria-hidden="true" focusable="false"><path d="{{ item.d }}" fill="currentColor" transform="{{ item.transform }}" /></svg>
+            </div>
+            <h3 style="fontSize:20px;fontWeight:700;color:#031126;margin:0 0 10px">{{ item.title }}</h3>
+            <p style="fontSize:15.5px;lineHeight:1.65;color:#4A5A6E;margin:0">{{ item.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="learning-path" aria-labelledby="philosophy-heading" style="padding:clamp(64px,10vw,112px) 24px;background:#FFFFFF">
+    <div style="max-width:1200px;margin:0 auto">
+      <div style="max-width:640px;margin:0 0 56px">
+        <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:14px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#216BFF;margin:0 0 16px" data-nx-reveal="true"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#216BFF"></span>Learning path</p>
+        <h2 id="philosophy-heading" style="fontSize:clamp(30px,4vw,42px);fontWeight:700;letterSpacing:-0.01em;color:#031126;margin:0" data-nx-reveal="true">A learning journey, not a finish line.</h2>
+      </div>
+      <div aria-hidden="true" data-nx-reveal="true" data-nx-progress="true" style="position:relative;height:2px;background:#E1E6EB;borderRadius:2px;margin:0 0 48px;overflow:hidden">
+        <div data-nx-progress-bar="true" style="height:100%;width:0%;background:linear-gradient(90deg,#216BFF,#43D7FF)"></div>
+      </div>
+      <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(240px,1fr));gap:40px">
+        <sc-for list="{{ principles }}" as="item" hint-placeholder-count="4">
+          <div style="borderTop:2px solid transparent;borderImage:linear-gradient(90deg,#216BFF,#43D7FF) 1;paddingTop:20px" data-nx-reveal="true" data-nx-stagger-group="journey">
+            <p style="fontSize:13px;fontWeight:700;letterSpacing:0.08em;color:#216BFF;margin:0 0 12px">{{ item.n }}</p>
+            <h3 style="fontSize:22px;fontWeight:700;color:#031126;margin:0 0 12px">{{ item.title }}</h3>
+            <p style="fontSize:15.5px;lineHeight:1.65;color:#4A5A6E;margin:0">{{ item.desc }}</p>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <section id="community" aria-labelledby="community-heading" style="padding:clamp(64px,10vw,112px) 24px;background:#FFFFFF;borderTop:1px solid #E1E6EB">
+    <div style="max-width:760px;margin:0 auto;text-align:center">
+      <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:14px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#216BFF;margin:0 0 16px" data-nx-reveal="true"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#216BFF"></span>Learn together</p>
+      <h2 id="community-heading" style="fontSize:clamp(30px,4vw,42px);fontWeight:700;letterSpacing:-0.01em;color:#031126;margin:0 0 24px" data-nx-reveal="true">AI moves faster when learning is shared.</h2>
+      <p style="fontSize:18px;lineHeight:1.7;color:#4A5A6E;margin:0 0 28px" data-nx-reveal="true">Neurolynx brings together curious individuals and forward-looking organizations to explore ideas, exchange perspectives, and grow through continuous learning.</p>
+      <div data-nx-reveal="true" style="display:inline-flex">
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" size="medium" aria-label="Follow the Neurolynx conversation on LinkedIn (opens in a new tab)" hint-size="260px,24px">Follow the conversation on LinkedIn</x-import>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="final-cta-heading" style="position:relative;overflow:hidden;background:#031126;padding:clamp(72px,10vw,120px) 24px">
+    <div aria-hidden="true" style="position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:min(760px,90%);height:520px;background:radial-gradient(circle,rgba(33,107,255,0.28) 0%,rgba(3,17,38,0) 70%);pointerEvents:none"></div>
+    <div style="position:relative;max-width:640px;margin:0 auto;text-align:center">
+      <h2 id="final-cta-heading" style="fontSize:clamp(30px,4vw,44px);fontWeight:700;letterSpacing:-0.01em;color:#F7FAFF;margin:0 0 20px" data-nx-reveal="true">Make AI easier to understand—and more useful to apply.</h2>
+      <p style="fontSize:18px;lineHeight:1.65;color:#B1C0D4;margin:0 0 36px" data-nx-reveal="true">Connect with Neurolynx on LinkedIn for insights, resources, and practical guidance designed to keep your learning moving forward.</p>
+      <div data-nx-reveal="true" style="display:flex;justifyContent:center">
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="large" icon-left="SocialLinkedin" onClick="{{ openLinkedIn }}" aria-label="Join Neurolynx on LinkedIn (opens in a new tab)" hint-size="240px,40px">Join Neurolynx on LinkedIn</x-import>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<dialog id="nx-modal" aria-labelledby="nx-modal-title" aria-modal="true" style="border:none;padding:0;background:transparent;maxWidth:520px;width:calc(100% - 32px);margin:auto">
+  <div style="position:relative;background:#071A34;border:1px solid rgba(75,143,255,0.24);borderRadius:18px;padding:36px 32px;color:#F7FAFF;boxShadow:0 24px 64px rgba(3,17,38,0.6)">
+    <div style="position:absolute;top:14px;right:14px">
+      <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.IconButton" icon="Close" variant="minimal" size="medium" onClick="{{ closeModal }}" aria-label="Close overview" dc-props="{{ whiteControlExtra }}" hint-size="32px,32px"></x-import>
+    </div>
+    <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:13px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#43D7FF;margin:0 0 14px"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#43D7FF"></span>Neurolynx overview</p>
+    <h2 id="nx-modal-title" style="fontSize:26px;fontWeight:700;letterSpacing:-0.01em;color:#F7FAFF;margin:0 0 14px">From AI curiosity to confident action.</h2>
+    <p style="fontSize:16px;lineHeight:1.6;color:#B1C0D4;margin:0 0 24px">Explore how Neurolynx helps individuals and organizations understand AI, build useful knowledge, apply ideas thoughtfully, and continue learning as the field evolves.</p>
+    <ul style="list-style:none;padding:0;margin:0 0 28px;display:grid;gap:12px">
+      <sc-for list="{{ focusAreas }}" as="area" hint-placeholder-count="4">
+        <li style="display:flex;alignItems:center;gap:12px;fontSize:15.5px;fontWeight:600;color:#E4ECF7"><span aria-hidden="true" style="width:8px;height:8px;borderRadius:999px;background:linear-gradient(90deg,#216BFF,#43D7FF);flexShrink:0"></span>{{ area }}</li>
+      </sc-for>
+    </ul>
+    <div style="display:flex;flexWrap:wrap;gap:16px;alignItems:center">
+      <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="medium" icon-right="ArrowRight" onClick="{{ exploreLearningPath }}" aria-label="Explore the learning path" hint-size="200px,32px">Explore the Learning Path</x-import>
+      <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" dc-props="{{ cyanLinkExtra }}" aria-label="Connect with Neurolynx on LinkedIn (opens in a new tab)" hint-size="150px,20px">Connect on LinkedIn</x-import>
+    </div>
+  </div>
+</dialog>
+
+<footer style="background:#031126;borderTop:1px solid rgba(75,143,255,0.16);padding:56px 24px" data-nx-reveal="true">
+  <div style="max-width:1200px;margin:0 auto;display:flex;flexWrap:wrap;justifyContent:space-between;alignItems:flex-start;gap:32px">
+    <div style="maxWidth:440px">
+      <a href="#top" aria-label="Neurolynx home" style="display:inline-flex;alignItems:center;gap:12px;margin:0 0 16px;text-decoration:none">
+        <img src="./assets/nx-mark-light.png" alt="" width="28" height="29" style="display:block" />
+        <img src="./assets/nx-word-light.png" alt="Neurolynx" width="186" height="14" style="display:block" />
+      </a>
+      <p style="fontSize:14.5px;lineHeight:1.6;color:#93A4BC;margin:0">An AI education platform helping individuals and organizations understand and apply artificial intelligence.</p>
+    </div>
+    <div style="display:flex;flexDirection:column;gap:12px;alignItems:flex-start">
+      <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" size="small" dc-props="{{ cyanLinkExtra }}" aria-label="Neurolynx on LinkedIn (opens in a new tab)" hint-size="170px,20px">Neurolynx on LinkedIn</x-import>
+      <p style="fontSize:13.5px;color:#6E7F97;margin:0">© {{ year }} Neurolynx. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const GRAPH = { viewBox: "0 0 32 32", transform: "matrix(1 0 0 1 2 1.999)", d: "M 15.83 0.271 C 16.03 0.081 16.3 -0.009 16.58 0.001 C 22.7 0.401 27.61 5.311 28 11.431 C 28.02 11.711 27.92 11.981 27.73 12.181 C 27.54 12.391 27.28 12.501 27 12.501 L 16.51 12.501 C 15.96 12.501 15.51 12.051 15.51 11.501 L 15.51 1.001 C 15.51 0.721 15.63 0.461 15.83 0.271 Z M 17.51 2.121 L 17.51 10.501 L 25.87 10.501 C 25.14 6.231 21.77 2.851 17.51 2.121 Z M 13.62 14.371 L 25.05 14.371 L 25.05 14.381 C 25.32 14.381 25.58 14.491 25.77 14.681 C 25.96 14.881 26.05 15.141 26.05 15.411 C 25.82 22.471 20.23 28.001 13.04 28.001 C 5.85 28.001 0 22.011 0 14.961 C 0 7.911 5.53 2.191 12.59 1.951 C 12.87 1.941 13.12 2.041 13.32 2.231 C 13.51 2.421 13.62 2.681 13.62 2.951 L 13.62 14.371 Z M 1.99 14.951 C 1.99 21.041 6.94 25.991 13.03 25.991 C 18.65 25.991 23.27 21.841 23.96 16.371 L 12.61 16.371 C 12.06 16.371 11.61 15.921 11.61 15.371 L 11.61 4.021 C 6.14 4.711 1.99 9.321 1.99 14.951 Z" };
+const EDUCATION = { viewBox: "0 0 32 32", transform: "matrix(1 0 0 1 2.040 4)", d: "M 27.43 6.17 L 14.43 0.09 C 14.16 -0.03 13.85 -0.03 13.58 0.09 L 0.58 6.17 C 0.23 6.34 0 6.69 0 7.08 C 0 7.47 0.23 7.82 0.58 7.99 L 5.19 10.09 L 5.19 21 C 5.19 21.29 5.32 21.57 5.55 21.76 C 5.66 21.85 8.26 24 13.92 24 C 19.58 24 22.24 21.86 22.35 21.77 C 22.58 21.58 22.72 21.3 22.72 21 L 22.72 10.13 L 23.96 9.57 L 23.96 13.76 L 22.98 15.78 C 22.87 16.01 22.88 16.26 23.01 16.47 C 23.14 16.68 23.35 16.81 23.59 16.81 L 26.32 16.81 C 26.56 16.81 26.78 16.68 26.91 16.47 C 27.04 16.26 27.05 16.01 26.94 15.78 L 25.96 13.76 L 25.96 8.66 L 27.42 8 C 27.78 7.84 28 7.49 28.01 7.09 C 28.01 6.7 27.79 6.34 27.43 6.18 L 27.43 6.17 Z M 14.01 2.1 L 24.62 7.06 L 21.02 8.7 L 21.43 9.61 L 21.01 8.7 L 13.99 11.9 L 6.89 8.66 L 3.38 7.06 L 13.99 2.1 L 14.01 2.1 Z M 13.93 22 C 10.17 22 8 20.95 7.2 20.47 L 7.2 11 L 13.59 13.91 C 13.72 13.97 13.86 14 14 14 C 14.14 14 14.28 13.97 14.42 13.91 L 20.72 11.04 L 20.72 20.47 C 19.9 20.95 17.68 22 13.92 22 L 13.93 22 Z" };
+const LIGHTBULB = { viewBox: "0 0 48 48", transform: "matrix(1 0 0 1 10 0)", d: "M 0 14 C 0 6.268 6.268 0 14 0 C 21.732 0 28 6.268 28 14 C 28 17.16 26.951 20.742 25.184 23.876 C 25.01 24.187 24.872 24.516 24.785 24.862 L 23.309 32 L 16 32 L 16 18 C 16 16.896 15.104 16 14 16 C 12.896 16 12 16.896 12 18 L 12 32 L 4.691 32 L 3.216 24.862 C 3.129 24.517 2.991 24.188 2.816 23.876 C 1.049 20.742 0 17.16 0 14 Z M 14 48 C 10.506 48 7.492 45.546 6.785 42.124 L 5.519 36 L 22.481 36 L 21.215 42.124 C 20.508 45.546 17.494 48 14 48 Z" };
+const GROUP = { viewBox: "0 0 32 32", transform: "matrix(1 0 0 1 1.820 5.320)", d: "M 14.18 10.06 C 16.97 10.06 19.24 7.8 19.24 5.03 C 19.24 2.26 16.97 0 14.18 0 C 11.39 0 9.12 2.26 9.12 5.03 C 9.12 7.8 11.39 10.06 14.18 10.06 Z M 14.18 1.74 C 16 1.74 17.49 3.21 17.49 5.02 C 17.49 6.83 16.01 8.3 14.18 8.3 C 12.35 8.3 10.87 6.83 10.87 5.02 C 10.87 3.21 12.35 1.74 14.18 1.74 Z M 25.85 8.18 C 25.85 9.95 24.42 11.39 22.65 11.39 C 20.88 11.39 19.44 9.94 19.44 8.18 C 19.44 6.42 20.89 4.98 22.65 4.98 C 24.41 4.98 25.85 6.41 25.85 8.18 Z M 22.65 6.71 C 21.83 6.71 21.17 7.37 21.17 8.18 C 21.17 9 21.84 9.66 22.65 9.66 C 23.46 9.66 24.12 8.99 24.12 8.18 C 24.12 7.37 23.47 6.71 22.65 6.71 Z M 21.4 12.43 L 24.29 12.43 L 24.32 12.42 C 26.58 12.42 28.42 14.26 28.42 16.53 L 28.42 18.33 C 28.42 19.14 27.76 19.8 26.95 19.8 L 22.59 19.8 C 22.33 20.76 21.46 21.47 20.42 21.47 L 8 21.47 C 6.95 21.47 6.08 20.76 5.83 19.8 L 1.47 19.8 C 0.66 19.8 0 19.14 0 18.33 L 0 16.53 C 0 14.26 1.84 12.42 4.1 12.42 L 6.99 12.42 C 7.16 12.42 7.34 12.44 7.55 12.47 L 7.56 12.47 C 8.66 11.4 10.17 10.73 11.83 10.73 L 16.56 10.73 C 18.17 10.73 19.7 11.36 20.84 12.47 C 21.04 12.44 21.23 12.43 21.4 12.43 Z M 1.98 17.81 L 5.73 17.81 L 5.73 16.79 C 5.73 15.95 5.9 15.15 6.21 14.43 L 4.08 14.43 C 2.92 14.43 1.98 15.38 1.98 16.54 L 1.98 17.81 Z M 20.65 19.48 L 20.65 16.78 L 20.66 16.78 C 20.66 14.58 18.79 12.72 16.57 12.72 L 11.83 12.72 C 9.57 12.72 7.74 14.54 7.74 16.78 L 7.74 19.48 L 20.65 19.48 Z M 22.154 14.42 C 22.462 15.167 22.65 15.954 22.65 16.77 L 22.65 17.8 L 26.4 17.8 L 26.4 16.53 C 26.4 15.37 25.46 14.42 24.3 14.42 L 22.154 14.42 Z M 8.92 8.18 C 8.92 9.95 7.48 11.39 5.71 11.39 C 3.95 11.39 2.51 9.94 2.51 8.18 C 2.51 6.42 3.94 4.98 5.71 4.98 C 7.48 4.98 8.92 6.41 8.92 8.18 Z M 5.71 6.71 C 4.9 6.71 4.24 7.37 4.24 8.18 C 4.24 9 4.89 9.66 5.71 9.66 C 6.53 9.66 7.19 8.99 7.19 8.18 C 7.19 7.37 6.52 6.71 5.71 6.71 Z" };
+
+const NAV_LINKS = [
+  { label: "About", href: "#about" },
+  { label: "What We Offer", href: "#offerings" },
+  { label: "Learning Path", href: "#learning-path" },
+  { label: "Community", href: "#community" },
+];
+
+const OFFERINGS = [
+  { title: "AI Insights", desc: "Understand the ideas, developments, and shifts shaping artificial intelligence.", ...GRAPH },
+  { title: "Learning Resources", desc: "Build knowledge with focused material designed to make complex subjects easier to explore.", ...EDUCATION },
+  { title: "Practical Guidance", desc: "Move from theory to useful application with straightforward, actionable direction.", ...LIGHTBULB },
+  { title: "Learning Community", desc: "Exchange perspectives and keep progressing alongside people who share your curiosity.", ...GROUP },
+];
+
+const PRINCIPLES = [
+  { n: "01", title: "Understand the Essentials", desc: "Build a clear foundation by making sense of important AI concepts and developments." },
+  { n: "02", title: "Apply What Matters", desc: "Turn knowledge into practical thinking, decisions, and experiments relevant to your goals." },
+  { n: "03", title: "Keep Building Capability", desc: "Continue learning as artificial intelligence evolves and new possibilities emerge." },
+];
+
+const FOCUS_AREAS = ["AI Insights", "Learning Resources", "Practical Guidance", "Learning Community"];
+const ROTATING_WORDS = ["confident", "practical", "meaningful"];
+const SECTION_IDS = ["about", "offerings", "learning-path", "community"];
+const LINKEDIN_URL = "https://www.linkedin.com/company/neurolynx/";
+
+function prefersReducedMotion() {
+  return typeof window !== "undefined" && !!window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+}
+
+class Component extends DCLogic {
+  state = {
+    mobileMenuOpen: false,
+    viewportWidth: typeof window !== "undefined" ? window.innerWidth : 1200,
+    rotationIndex: 0,
+    videoPlaying: !prefersReducedMotion(),
+    activeSection: "",
+  };
+
+  componentDidMount() {
+    this._onResize = () => this.setState({ viewportWidth: window.innerWidth });
+    window.addEventListener("resize", this._onResize);
+    this._userPausedVideo = false;
+    this.reduceMotion = prefersReducedMotion();
+
+    // Scroll-progress line (passive, direct DOM write — no re-render)
+    const bar = document.getElementById("nx-scroll-progress");
+    this._onScroll = () => {
+      const h = document.documentElement;
+      const max = h.scrollHeight - h.clientHeight;
+      if (bar) bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + "%";
+    };
+    window.addEventListener("scroll", this._onScroll, { passive: true });
+    this._onScroll();
+
+    // Scroll reveals + stagger
+    const els = Array.from(document.querySelectorAll("[data-nx-reveal]"));
+    const groups = {};
+    els.forEach((el) => {
+      const g = el.getAttribute("data-nx-stagger-group");
+      if (g) { (groups[g] = groups[g] || []).push(el); }
+    });
+    Object.values(groups).forEach((group) => group.forEach((el, i) => { el.style.transitionDelay = (i * 90) + "ms"; }));
+
+    if (this.reduceMotion) {
+      els.forEach((el) => {
+        if (el.hasAttribute("data-nx-progress")) {
+          const b = el.querySelector("[data-nx-progress-bar]");
+          if (b) b.style.width = "100%";
+        } else { el.style.opacity = "1"; el.style.transform = "none"; }
+      });
+    } else {
+      els.forEach((el) => {
+        if (!el.hasAttribute("data-nx-progress")) {
+          el.style.opacity = "0";
+          el.style.transform = "translateY(18px)";
+          el.style.transition = "opacity 650ms cubic-bezier(0.4,0,0.2,1), transform 650ms cubic-bezier(0.4,0,0.2,1)";
+        }
+      });
+      this._observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (entry.target.hasAttribute("data-nx-progress")) {
+              const b = entry.target.querySelector("[data-nx-progress-bar]");
+              if (b) { b.style.transition = "width 900ms cubic-bezier(0.4,0,0.2,1)"; b.style.width = "100%"; }
+            } else {
+              entry.target.style.opacity = "1";
+              entry.target.style.transform = "none";
+            }
+            this._observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15, rootMargin: "0px 0px -60px 0px" });
+      els.forEach((el) => this._observer.observe(el));
+
+      // Single-word rotation
+      this._rotateTimer = setInterval(() => {
+        this.setState((s) => ({ rotationIndex: (s.rotationIndex + 1) % ROTATING_WORDS.length }));
+      }, 3400);
+    }
+
+    // Active-section indicator
+    this._sectionObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) this.setState({ activeSection: entry.target.id });
+      });
+    }, { rootMargin: "-45% 0px -50% 0px" });
+    SECTION_IDS.forEach((id) => { const s = document.getElementById(id); if (s) this._sectionObserver.observe(s); });
+
+    // Wire native <dialog>: backdrop click closes, restore scroll on close
+    const dlg = document.getElementById("nx-modal");
+    if (dlg) {
+      dlg.addEventListener("click", (e) => { if (e.target === dlg) this.closeModal(); });
+      dlg.addEventListener("close", () => { document.body.style.overflow = ""; });
+    }
+
+    // Pause hero video when off-screen
+    const video = document.getElementById("nx-hero-video");
+    if (video) {
+      this._videoObserver = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            if (!this._userPausedVideo && !this.reduceMotion && video.paused) {
+              video.play().catch(() => {});
+              this.setState({ videoPlaying: true });
+            }
+          } else if (!video.paused) {
+            video.pause();
+            this.setState({ videoPlaying: false });
+          }
+        });
+      }, { threshold: 0.1 });
+      this._videoObserver.observe(video);
+    }
+  }
+
+  componentWillUnmount() {
+    if (this._onResize) window.removeEventListener("resize", this._onResize);
+    if (this._onScroll) window.removeEventListener("scroll", this._onScroll);
+    if (this._observer) this._observer.disconnect();
+    if (this._sectionObserver) this._sectionObserver.disconnect();
+    if (this._videoObserver) this._videoObserver.disconnect();
+    if (this._rotateTimer) clearInterval(this._rotateTimer);
+    document.body.style.overflow = "";
+  }
+
+  toggleMobileMenu = () => this.setState((s) => ({ mobileMenuOpen: !s.mobileMenuOpen }));
+  closeMobileMenu = () => this.setState({ mobileMenuOpen: false });
+  openLinkedIn = () => window.open(LINKEDIN_URL, "_blank", "noopener,noreferrer");
+  scrollToOfferings = () => { window.location.hash = "offerings"; };
+
+  togglePlayback = () => {
+    const video = document.getElementById("nx-hero-video");
+    if (!video) return;
+    if (video.paused) {
+      video.play().catch(() => {});
+      this._userPausedVideo = false;
+      this.setState({ videoPlaying: true });
+    } else {
+      video.pause();
+      this._userPausedVideo = true;
+      this.setState({ videoPlaying: false });
+    }
+  };
+
+  openModal = () => {
+    const d = document.getElementById("nx-modal");
+    if (d && d.showModal) { document.body.style.overflow = "hidden"; d.showModal(); }
+  };
+  closeModal = () => {
+    const d = document.getElementById("nx-modal");
+    if (d && d.open) d.close();
+    document.body.style.overflow = "";
+  };
+  exploreLearningPath = () => { this.closeModal(); window.location.hash = "learning-path"; };
+
+  renderVals() {
+    const width = this.state.viewportWidth;
+    const ri = this.state.rotationIndex;
+    const active = this.state.activeSection;
+
+    const rotatingWords = ROTATING_WORDS.map((w, i) => ({
+      text: w,
+      style: {
+        position: "absolute",
+        left: 0,
+        top: 0,
+        fontWeight: 600,
+        background: "linear-gradient(90deg,#2F7BFF,#43D7FF)",
+        WebkitBackgroundClip: "text",
+        backgroundClip: "text",
+        color: "transparent",
+        filter: "drop-shadow(0 0 12px rgba(33,107,255,0.4))",
+        opacity: i === ri ? 1 : 0,
+        transform: i === ri ? "translateY(0)" : "translateY(0.22em)",
+        transition: "opacity 550ms cubic-bezier(0.4,0,0.2,1), transform 550ms cubic-bezier(0.4,0,0.2,1)",
+      },
+    }));
+
+    const navLinks = NAV_LINKS.map((l) => {
+      const on = active === l.href.slice(1);
+      return {
+        ...l,
+        linkStyle: {
+          fontSize: "15px",
+          fontWeight: 600,
+          color: on ? "#43D7FF" : "#F7FAFF",
+          textDecoration: "none",
+          paddingBottom: "3px",
+          borderBottom: on ? "2px solid #43D7FF" : "2px solid transparent",
+          transition: "color 160ms, border-color 160ms",
+        },
+      };
+    });
+
+    return {
+      showFullNav: width >= 860,
+      showWordmark: width >= 520,
+      mobileMenuOpen: this.state.mobileMenuOpen,
+      menuButtonLabel: this.state.mobileMenuOpen ? "Close menu" : "Open menu",
+      mobileMenuIcon: this.state.mobileMenuOpen ? "Close" : "Menu",
+      toggleMobileMenu: this.toggleMobileMenu,
+      closeMobileMenu: this.closeMobileMenu,
+      openLinkedIn: this.openLinkedIn,
+      scrollToOfferings: this.scrollToOfferings,
+      togglePlayback: this.togglePlayback,
+      openModal: this.openModal,
+      closeModal: this.closeModal,
+      exploreLearningPath: this.exploreLearningPath,
+      whiteLinkExtra: { style: { color: "#F7FAFF" } },
+      cyanLinkExtra: { style: { color: "#43D7FF" } },
+      whiteControlExtra: { style: { color: "#F7FAFF" } },
+      heroVideoAutoplay: !prefersReducedMotion(),
+      videoPlaying: this.state.videoPlaying,
+      playPauseIcon: this.state.videoPlaying ? "Pause" : "PlayCircleFilled",
+      playPauseLabel: this.state.videoPlaying ? "Pause background video" : "Play background video",
+      rotatingWords,
+      navLinks,
+      offerings: OFFERINGS,
+      principles: PRINCIPLES,
+      focusAreas: FOCUS_AREAS,
+      linkedinUrl: LINKEDIN_URL,
+      year: new Date().getFullYear(),
+      skipLinkStyle: {
+        position: "absolute", top: "-48px", left: "16px", background: "#216BFF", color: "#fff",
+        padding: "10px 16px", borderRadius: "8px", fontSize: "14px", fontWeight: 600,
+        textDecoration: "none", zIndex: 100, transition: "top 150ms ease",
+      },
+    };
+  }
+}
+
+</script>
+</body>
+</html>

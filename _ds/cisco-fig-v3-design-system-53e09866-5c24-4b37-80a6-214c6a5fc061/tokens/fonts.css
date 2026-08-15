@@ -1,0 +1,8 @@
+/* Cisco Fig v3 webfonts.
+   SOURCE FONT: "CiscoSansTT" (weights Thin 100, Light 300, Regular 400, Medium 500, Bold 700)
+   is a proprietary Cisco typeface and is NOT bundled in the Figma file.
+   SUBSTITUTE: Google Fonts "Mulish" — the closest freely-available humanist sans
+   (open apertures, near-identical x-height and proportions). Swap in the real
+   CiscoSansTT .woff2 files here (add @font-face rules named "CiscoSansTT") when available. */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..900;1,200..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&display=swap');
