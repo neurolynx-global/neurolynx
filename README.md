@@ -1,8 +1,8 @@
-# Neurolynx
+# Neuro Lynx
 
 > Practical AI Education for Individuals and Organizations
 
-Neurolynx is a single-page marketing and community site that delivers clear AI insights, practical guidance, focused learning resources, and a community-driven approach to keeping professionals moving forward in the AI era.
+Neuro Lynx is a single-page marketing and community site that delivers clear AI insights, practical guidance, focused learning resources, and a community-driven approach to keeping professionals moving forward in the AI era.
 
 ---
 
