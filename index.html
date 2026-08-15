@@ -10,10 +10,10 @@
 <helmet>
 <script src="./ds-base.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Neuro Lynx | Practical AI Education for Individuals and Organizations</title>
-<meta name="description" content="Explore clear AI insights, practical guidance, focused resources, and community-driven learning with Neuro Lynx." />
-<meta property="og:title" content="Neuro Lynx | Practical AI Education for Individuals and Organizations" />
-<meta property="og:description" content="Explore clear AI insights, practical guidance, focused resources, and community-driven learning with Neuro Lynx." />
+<title>Neurolynx | Practical AI Education for Individuals and Organizations</title>
+<meta name="description" content="Explore clear AI insights, practical guidance, focused resources, and community-driven learning with Neurolynx." />
+<meta property="og:title" content="Neurolynx | Practical AI Education for Individuals and Organizations" />
+<meta property="og:description" content="Explore clear AI insights, practical guidance, focused resources, and community-driven learning with Neurolynx." />
 <meta property="og:type" content="website" />
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
@@ -33,7 +33,7 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
 
 <header style="position:sticky;top:0;z-index:50;background:rgba(3,17,38,0.72);backdropFilter:blur(12px);borderBottom:1px solid rgba(75,143,255,0.18)">
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;height:74px;display:flex;alignItems:center;justifyContent:space-between;gap:16px">
-    <a href="#top" aria-label="Neuro Lynx home" style="display:flex;alignItems:center;gap:12px;text-decoration:none">
+    <a href="#top" aria-label="Neurolynx home" style="display:flex;alignItems:center;gap:12px;text-decoration:none">
       <img src="./assets/nx-mark-light.png" alt="" width="30" height="31" style="display:block" />
       <sc-if value="{{ showWordmark }}" hint-placeholder-val="{{ true }}">
         <img src="./assets/nx-word-light.png" alt="" width="200" height="15" style="display:block" />
@@ -45,7 +45,7 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
         <sc-for list="{{ navLinks }}" as="link" hint-placeholder-count="4">
           <a href="{{ link.href }}" style="{{ link.linkStyle }}" style-hover="color:#43D7FF" style-focus="outline:2px solid #43D7FF;outlineOffset:4px;borderRadius:2px">{{ link.label }}</a>
         </sc-for>
-        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="medium" icon-left="SocialLinkedin" onClick="{{ openLinkedIn }}" aria-label="Connect with Neuro Lynx on LinkedIn (opens in a new tab)" hint-size="180px,32px">Connect on LinkedIn</x-import>
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="medium" icon-left="SocialLinkedin" onClick="{{ openLinkedIn }}" aria-label="Connect with Neurolynx on LinkedIn (opens in a new tab)" hint-size="180px,32px">Connect on LinkedIn</x-import>
       </nav>
     </sc-if>
 
@@ -62,7 +62,7 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
         <a href="{{ link.href }}" onClick="{{ closeMobileMenu }}" style="padding:14px 4px;fontSize:16px;fontWeight:600;color:#F7FAFF;borderBottom:1px solid rgba(75,143,255,0.14)" style-focus="outline:2px solid #43D7FF;outlineOffset:-2px">{{ link.label }}</a>
       </sc-for>
       <div style="margin-top:12px;display:flex;justifyContent:center">
-        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="large" icon-left="SocialLinkedin" onClick="{{ openLinkedIn }}" aria-label="Connect with Neuro Lynx on LinkedIn (opens in a new tab)" hint-size="220px,40px">Connect on LinkedIn</x-import>
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="large" icon-left="SocialLinkedin" onClick="{{ openLinkedIn }}" aria-label="Connect with Neurolynx on LinkedIn (opens in a new tab)" hint-size="220px,40px">Connect on LinkedIn</x-import>
       </div>
     </nav>
   </sc-if>
@@ -83,11 +83,11 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
         <span aria-hidden="true">Keep learning.<br /><span style="whiteSpace:nowrap">Turn knowledge into </span><span style="position:relative;display:inline-block;whiteSpace:nowrap;lineHeight:1.18;paddingBottom:0.1em;verticalAlign:baseline"><span style="visibility:hidden;fontWeight:600">meaningful</span><sc-for list="{{ rotatingWords }}" as="w" hint-placeholder-count="3"><span style="{{ w.style }}">{{ w.text }}</span></sc-for></span> action.</span>
       </h1>
 
-      <p style="fontSize:clamp(17px,2vw,20px);lineHeight:1.6;color:#DCE6F3;margin:0 0 38px;maxWidth:560px;textShadow:0 1px 12px rgba(3,17,38,0.5)" data-nx-reveal="true" data-nx-stagger-group="hero">Neuro Lynx helps individuals and organizations turn complex AI ideas into clear understanding, practical capability, and confident action.</p>
+      <p style="fontSize:clamp(17px,2vw,20px);lineHeight:1.6;color:#DCE6F3;margin:0 0 38px;maxWidth:560px;textShadow:0 1px 12px rgba(3,17,38,0.5)" data-nx-reveal="true" data-nx-stagger-group="hero">Neurolynx helps individuals and organizations turn complex AI ideas into clear understanding, practical capability, and confident action.</p>
 
       <div style="display:flex;flexWrap:wrap;alignItems:center;gap:26px" data-nx-reveal="true" data-nx-stagger-group="hero">
-        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="large" icon-right="ArrowRight" onClick="{{ scrollToOfferings }}" aria-label="Explore Neuro Lynx" hint-size="200px,40px">Explore Neuro Lynx</x-import>
-        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" dc-props="{{ whiteLinkExtra }}" aria-label="Connect with Neuro Lynx on LinkedIn (opens in a new tab)" hint-size="150px,20px">Connect on LinkedIn</x-import>
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="large" icon-right="ArrowRight" onClick="{{ scrollToOfferings }}" aria-label="Explore Neurolynx" hint-size="200px,40px">Explore Neurolynx</x-import>
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" dc-props="{{ whiteLinkExtra }}" aria-label="Connect with Neurolynx on LinkedIn (opens in a new tab)" hint-size="150px,20px">Connect on LinkedIn</x-import>
       </div>
     </div>
 
@@ -98,9 +98,9 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
 
   <section id="about" aria-labelledby="about-heading" style="padding:clamp(64px,10vw,112px) 24px;background:#FFFFFF">
     <div style="max-width:760px;margin:0 auto;text-align:center">
-      <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:14px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#216BFF;margin:0 0 16px" data-nx-reveal="true"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#216BFF"></span>Why Neuro Lynx</p>
+      <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:14px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#216BFF;margin:0 0 16px" data-nx-reveal="true"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#216BFF"></span>Why Neurolynx</p>
       <h2 id="about-heading" style="fontSize:clamp(30px,4vw,42px);fontWeight:700;letterSpacing:-0.01em;color:#031126;margin:0 0 24px" data-nx-reveal="true">AI is moving fast. Understanding it should not feel overwhelming.</h2>
-      <p style="fontSize:18px;lineHeight:1.7;color:#4A5A6E;margin:0" data-nx-reveal="true">Neuro Lynx turns complex ideas into clear, useful knowledge. We help individuals and organizations explore artificial intelligence, understand what matters, and build the confidence to apply it thoughtfully.</p>
+      <p style="fontSize:18px;lineHeight:1.7;color:#4A5A6E;margin:0" data-nx-reveal="true">Neurolynx turns complex ideas into clear, useful knowledge. We help individuals and organizations explore artificial intelligence, understand what matters, and build the confidence to apply it thoughtfully.</p>
     </div>
   </section>
 
@@ -112,7 +112,7 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
         <p style="fontSize:17px;lineHeight:1.6;color:#4A5A6E;margin:0" data-nx-reveal="true">Build understanding, turn insight into action, and keep learning as the field evolves.</p>
       </div>
       <div style="margin:0 0 48px" data-nx-reveal="true">
-        <button type="button" onClick="{{ openModal }}" aria-haspopup="dialog" style="display:inline-flex;alignItems:center;gap:9px;padding:11px 20px;background:#FFFFFF;border:1px solid rgba(33,107,255,0.35);borderRadius:999px;color:#216BFF;fontSize:15px;fontWeight:600;cursor:pointer;fontFamily:inherit;transition:border-color 160ms,box-shadow 160ms" style-hover="borderColor:#216BFF;boxShadow:0 0 0 4px rgba(33,107,255,0.1)" style-focus="outline:2px solid #216BFF;outlineOffset:2px"><span aria-hidden="true" style="width:8px;height:8px;borderRadius:999px;background:linear-gradient(90deg,#216BFF,#43D7FF)"></span>Quick Neuro Lynx overview</button>
+        <button type="button" onClick="{{ openModal }}" aria-haspopup="dialog" style="display:inline-flex;alignItems:center;gap:9px;padding:11px 20px;background:#FFFFFF;border:1px solid rgba(33,107,255,0.35);borderRadius:999px;color:#216BFF;fontSize:15px;fontWeight:600;cursor:pointer;fontFamily:inherit;transition:border-color 160ms,box-shadow 160ms" style-hover="borderColor:#216BFF;boxShadow:0 0 0 4px rgba(33,107,255,0.1)" style-focus="outline:2px solid #216BFF;outlineOffset:2px"><span aria-hidden="true" style="width:8px;height:8px;borderRadius:999px;background:linear-gradient(90deg,#216BFF,#43D7FF)"></span>Quick Neurolynx overview</button>
       </div>
       <div style="display:grid;gridTemplateColumns:repeat(auto-fit,minmax(250px,1fr));gap:24px">
         <sc-for list="{{ offerings }}" as="item" hint-placeholder-count="4">
@@ -153,9 +153,9 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
     <div style="max-width:760px;margin:0 auto;text-align:center">
       <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:14px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#216BFF;margin:0 0 16px" data-nx-reveal="true"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#216BFF"></span>Learn together</p>
       <h2 id="community-heading" style="fontSize:clamp(30px,4vw,42px);fontWeight:700;letterSpacing:-0.01em;color:#031126;margin:0 0 24px" data-nx-reveal="true">AI moves faster when learning is shared.</h2>
-      <p style="fontSize:18px;lineHeight:1.7;color:#4A5A6E;margin:0 0 28px" data-nx-reveal="true">Neuro Lynx brings together curious individuals and forward-looking organizations to explore ideas, exchange perspectives, and grow through continuous learning.</p>
+      <p style="fontSize:18px;lineHeight:1.7;color:#4A5A6E;margin:0 0 28px" data-nx-reveal="true">Neurolynx brings together curious individuals and forward-looking organizations to explore ideas, exchange perspectives, and grow through continuous learning.</p>
       <div data-nx-reveal="true" style="display:inline-flex">
-        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" size="medium" aria-label="Follow the Neuro Lynx conversation on LinkedIn (opens in a new tab)" hint-size="260px,24px">Follow the conversation on LinkedIn</x-import>
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" size="medium" aria-label="Follow the Neurolynx conversation on LinkedIn (opens in a new tab)" hint-size="260px,24px">Follow the conversation on LinkedIn</x-import>
       </div>
     </div>
   </section>
@@ -164,9 +164,9 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
     <div aria-hidden="true" style="position:absolute;top:-40%;left:50%;transform:translateX(-50%);width:min(760px,90%);height:520px;background:radial-gradient(circle,rgba(33,107,255,0.28) 0%,rgba(3,17,38,0) 70%);pointerEvents:none"></div>
     <div style="position:relative;max-width:640px;margin:0 auto;text-align:center">
       <h2 id="final-cta-heading" style="fontSize:clamp(30px,4vw,44px);fontWeight:700;letterSpacing:-0.01em;color:#F7FAFF;margin:0 0 20px" data-nx-reveal="true">Make AI easier to understand—and more useful to apply.</h2>
-      <p style="fontSize:18px;lineHeight:1.65;color:#B1C0D4;margin:0 0 36px" data-nx-reveal="true">Connect with Neuro Lynx on LinkedIn for insights, resources, and practical guidance designed to keep your learning moving forward.</p>
+      <p style="fontSize:18px;lineHeight:1.65;color:#B1C0D4;margin:0 0 36px" data-nx-reveal="true">Connect with Neurolynx on LinkedIn for insights, resources, and practical guidance designed to keep your learning moving forward.</p>
       <div data-nx-reveal="true" style="display:flex;justifyContent:center">
-        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="large" icon-left="SocialLinkedin" onClick="{{ openLinkedIn }}" aria-label="Join Neuro Lynx on LinkedIn (opens in a new tab)" hint-size="240px,40px">Join Neuro Lynx on LinkedIn</x-import>
+        <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="large" icon-left="SocialLinkedin" onClick="{{ openLinkedIn }}" aria-label="Join Neurolynx on LinkedIn (opens in a new tab)" hint-size="240px,40px">Join Neurolynx on LinkedIn</x-import>
       </div>
     </div>
   </section>
@@ -178,9 +178,9 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
     <div style="position:absolute;top:14px;right:14px">
       <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.IconButton" icon="Close" variant="minimal" size="medium" onClick="{{ closeModal }}" aria-label="Close overview" dc-props="{{ whiteControlExtra }}" hint-size="32px,32px"></x-import>
     </div>
-    <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:13px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#43D7FF;margin:0 0 14px"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#43D7FF"></span>Neuro Lynx overview</p>
+    <p style="display:inline-flex;alignItems:center;gap:9px;fontSize:13px;fontWeight:700;letterSpacing:0.09em;textTransform:uppercase;color:#43D7FF;margin:0 0 14px"><span aria-hidden="true" style="width:7px;height:7px;borderRadius:999px;background:#43D7FF"></span>Neurolynx overview</p>
     <h2 id="nx-modal-title" style="fontSize:26px;fontWeight:700;letterSpacing:-0.01em;color:#F7FAFF;margin:0 0 14px">From AI curiosity to confident action.</h2>
-    <p style="fontSize:16px;lineHeight:1.6;color:#B1C0D4;margin:0 0 24px">Explore how Neuro Lynx helps individuals and organizations understand AI, build useful knowledge, apply ideas thoughtfully, and continue learning as the field evolves.</p>
+    <p style="fontSize:16px;lineHeight:1.6;color:#B1C0D4;margin:0 0 24px">Explore how Neurolynx helps individuals and organizations understand AI, build useful knowledge, apply ideas thoughtfully, and continue learning as the field evolves.</p>
     <ul style="list-style:none;padding:0;margin:0 0 28px;display:grid;gap:12px">
       <sc-for list="{{ focusAreas }}" as="area" hint-placeholder-count="4">
         <li style="display:flex;alignItems:center;gap:12px;fontSize:15.5px;fontWeight:600;color:#E4ECF7"><span aria-hidden="true" style="width:8px;height:8px;borderRadius:999px;background:linear-gradient(90deg,#216BFF,#43D7FF);flexShrink:0"></span>{{ area }}</li>
@@ -188,7 +188,7 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
     </ul>
     <div style="display:flex;flexWrap:wrap;gap:16px;alignItems:center">
       <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Button" variant="primary" size="medium" icon-right="ArrowRight" onClick="{{ exploreLearningPath }}" aria-label="Explore the learning path" hint-size="200px,32px">Explore the Learning Path</x-import>
-      <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" dc-props="{{ cyanLinkExtra }}" aria-label="Connect with Neuro Lynx on LinkedIn (opens in a new tab)" hint-size="150px,20px">Connect on LinkedIn</x-import>
+      <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" dc-props="{{ cyanLinkExtra }}" aria-label="Connect with Neurolynx on LinkedIn (opens in a new tab)" hint-size="150px,20px">Connect on LinkedIn</x-import>
     </div>
   </div>
 </dialog>
@@ -196,15 +196,15 @@ dialog#nx-modal[open]{animation:nx-modal-in 260ms cubic-bezier(0.4,0,0.2,1)}
 <footer style="background:#031126;borderTop:1px solid rgba(75,143,255,0.16);padding:56px 24px" data-nx-reveal="true">
   <div style="max-width:1200px;margin:0 auto;display:flex;flexWrap:wrap;justifyContent:space-between;alignItems:flex-start;gap:32px">
     <div style="maxWidth:440px">
-      <a href="#top" aria-label="Neuro Lynx home" style="display:inline-flex;alignItems:center;gap:12px;margin:0 0 16px;text-decoration:none">
+      <a href="#top" aria-label="Neurolynx home" style="display:inline-flex;alignItems:center;gap:12px;margin:0 0 16px;text-decoration:none">
         <img src="./assets/nx-mark-light.png" alt="" width="28" height="29" style="display:block" />
-        <img src="./assets/nx-word-light.png" alt="Neuro Lynx" width="186" height="14" style="display:block" />
+        <img src="./assets/nx-word-light.png" alt="Neurolynx" width="186" height="14" style="display:block" />
       </a>
       <p style="fontSize:14.5px;lineHeight:1.6;color:#93A4BC;margin:0">An AI education platform helping individuals and organizations understand and apply artificial intelligence.</p>
     </div>
     <div style="display:flex;flexDirection:column;gap:12px;alignItems:flex-start">
-      <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" size="small" dc-props="{{ cyanLinkExtra }}" aria-label="Neuro Lynx on LinkedIn (opens in a new tab)" hint-size="170px,20px">Neuro Lynx on LinkedIn</x-import>
-      <p style="fontSize:13.5px;color:#6E7F97;margin:0">© {{ year }} Neuro Lynx. All rights reserved.</p>
+      <x-import component-from-global-scope="CiscoFigV3DesignSystem_53e098.Link" href="{{ linkedinUrl }}" external="{{ true }}" icon-right="SocialLinkedin" size="small" dc-props="{{ cyanLinkExtra }}" aria-label="Neurolynx on LinkedIn (opens in a new tab)" hint-size="170px,20px">Neurolynx on LinkedIn</x-import>
+      <p style="fontSize:13.5px;color:#6E7F97;margin:0">© {{ year }} Neurolynx. All rights reserved.</p>
     </div>
   </div>
 </footer>

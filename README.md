@@ -1,8 +1,8 @@
-# Neuro Lynx
+# Neurolynx
 
 > Practical AI Education for Individuals and Organizations
 
-Neuro Lynx is a single-page marketing and community site that delivers clear AI insights, practical guidance, focused learning resources, and a community-driven approach to keeping professionals moving forward in the AI era.
+Neurolynx is a single-page marketing and community site that delivers clear AI insights, practical guidance, focused learning resources, and a community-driven approach to keeping professionals moving forward in the AI era.
 
 ---
 
@@ -166,14 +166,14 @@ Internal contributors must:
 1. Branch from `dev` (never directly from `main`)
 2. Follow the branch naming convention: `feature/`, `fix/`, `chore/`
 3. Obtain written approval before merging to `main`
-4. Ensure no third-party code with open-source licenses is introduced without prior written approval from Neuro Lynx
+4. Ensure no third-party code with open-source licenses is introduced without prior written approval from Neurolynx
 
 ---
 
 ## License
 
-**Copyright © 2026 Neuro Lynx. All rights reserved.**
+**Copyright © 2026 Neurolynx. All rights reserved.**
 
-This repository is proprietary and confidential. No use, copying, modification, distribution, or commercial exploitation is permitted without explicit prior written permission from Neuro Lynx. See the [LICENSE](./LICENSE) file for full terms.
+This repository is proprietary and confidential. No use, copying, modification, distribution, or commercial exploitation is permitted without explicit prior written permission from Neurolynx. See the [LICENSE](./LICENSE) file for full terms.
 
 This is **not** an open-source project. No open-source license (MIT, Apache, GPL, or otherwise) applies.
